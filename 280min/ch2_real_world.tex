@@ -1,9 +1,16 @@
 
+
 \documentclass{article}
+
+\usepackage{polyglossia}
+
+\setdefaultlanguage{english}
+\setotherlanguage{german}
+
 \begin{document}
 
-\section{2.1 Line Breaking and Page Breaking}
 
+\section{2.1 Line Breaking and Page Breaking}
 
 start a new line here, \\
 and also here but make 
@@ -68,7 +75,17 @@ Abstracts are very important \ldots
 
 \section{2.8 International Language Support}
 
+H\^otel, na\"{\i}ve, \'el\'eve, \\
+sm{\o}rrebr{\o}d, !'Se\~norita!, \\
+Sch\"onbrunner Schlo\ss, \.Z\'o\l\'c
 
+\section{2.8.2 Polyglossia Usage}
+
+Today is not \today.
+
+\begin{german}
+Heute ist nicht \today
+\end{german}
 
 \end{document}
 

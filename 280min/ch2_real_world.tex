@@ -3,12 +3,23 @@
 \documentclass{article}
 
 \usepackage{polyglossia}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
 
 \setdefaultlanguage{english}
 \setotherlanguage{german}
 
-\begin{document}
+%\newfontfamily\greekfont[
+%  Extension=.otf, UprightFont=*rm, ItalicFont=*ti,
+%  BoldFont=*bx, BoldItalicFont=*bi,
+%]{Cm}
 
+\setotherlanguage{greek}
+\newfontfamily\greekfont{CMU Serif}
+\setotherlanguage{russian}
+\newfontfamily\russianfont{CMU Serif}
+
+\begin{document}
 
 \section{2.1 Line Breaking and Page Breaking}
 
@@ -84,8 +95,34 @@ Sch\"onbrunner Schlo\ss, \.Z\'o\l\'c
 Today is not \today.
 
 \begin{german}
-Heute ist nicht \today
+  Heute ist nicht \today\\
 \end{german}
+
+\begin{lang}{de-DE}
+  Heute ist nicht \today\\
+\end{lang}
+
+\begin{german}[script=blackletter]
+  Heute ist nicht \today\\
+\end{german}
+
+In Austria the write
+\textlang[variant=austrian]{de}{J\"anner}
+instead of \textgerman{Januar}. And in the olden
+days \textlang{de}{August} was written 
+\textgerman[script=blackletter]{Auguſt}.
+
+\textrussian{Правда} is a Russian newspaper.
+\textlang{greek}{αλήθεια} is truth or disclosure in philosohy.
+
+\section{2.8.3 Right to Left (RTL) language}
+skipped
+
+\section{2.8.4 Chinese, Japanese and Korean (CJK)}
+skipped
+
+\section{2.9 Simple Commands}
+
 
 \end{document}
 

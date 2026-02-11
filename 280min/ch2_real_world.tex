@@ -5,6 +5,9 @@
 \usepackage{polyglossia}
 \usepackage{lmodern}
 \usepackage[T1]{fontenc}
+\usepackage{xparse}
+\usepackage{textcomp}
+\usepackage{fontspec}
 
 \setdefaultlanguage{english}
 \setotherlanguage{german}
@@ -18,6 +21,8 @@
 \newfontfamily\greekfont{CMU Serif}
 \setotherlanguage{russian}
 \newfontfamily\russianfont{CMU Serif}
+
+\setmainfont{Latin Modern Roman}
 
 \begin{document}
 
@@ -122,6 +127,33 @@ skipped
 skipped
 
 \section{2.9 Simple Commands}
+
+\NewDocumentCommand{\lukas}{}{%
+  \L{}ukasiewicz%
+}
+
+Polish notation (also known as \lukas{} notation, due to its inventor, Jan \lukas{})
+is a mathematical notation \ldots
+
+\NewDocumentCommand{%
+  \comminus}{}{⁒}
+
+Now I can type ⁒ or \comminus.
+
+\NewDocumentCommand{%
+\hero}{}{Launcelot}
+
+\hero{} unsheathed his sword.
+He had a bad feeling about
+this place from the start.
+
+\RenewDocumentCommand{%
+\ldots}{}{...}
+
+I like my ellipsis looking
+uglier \ldots
+
+\section{2.10 The Space Between Words}
 
 
 \end{document}

@@ -8,6 +8,8 @@
 \usepackage{xparse}
 \usepackage{textcomp}
 \usepackage{fontspec}
+\usepackage{csquotes}
+\usepackage{verbatim}
 
 \setdefaultlanguage{english}
 \setotherlanguage{german}
@@ -155,6 +157,133 @@ uglier \ldots
 
 \section{2.10 The Space Between Words}
 
+Mr.~Smith was happy to see her\\
+cf.-Fig.-5\\
+I like BASIC\@. What about you?
+
+\section{2.11 Titles, Chapters, and Sections}
+ 
+\tableofcontents
+
+\section[Title for the table of contents]{A long
+and especially boring title, 
+shown is the text}
+
+\section{2.12 Cross Reference}
+
+A reference to this subsectiuon%
+\label{my-marker} looks like:
+see Section~\ref{my-marker}
+on page~\pageref{my-marker}.
+
+\section{2.13 Footnotes}
+
+Footnotes\footnote{This is a footnote.} are 
+often used by people using \LaTeX.
+
+\section{2.14 Lits}
+
+\begin{enumerate}
+  \item you can nest the list environmets to your taste:
+  \begin{itemize}
+    \item But it might start to look silly.
+    \item [-] With a dash.
+  \end{itemize}
+  \item Therefore remember:
+  \begin{description}
+    \item[Stupid] things will not become smart because they are in a list.
+    \item[Smart] things, though, can be presented beautifully in a list.  
+  \end{description}
+\end{enumerate}
+
+\section{2.15 Non-Justified Text}
+
+\begin{flushleft}
+  This text is\\ left-aligned.
+  \LaTeX{} is not trying to make each line same length.
+\end{flushleft}
+
+\begin{flushright}
+  This text is right-\\aligned.
+  \LaTeX{} is not trying to make each line the same length.
+\end{flushright}
+
+\begin{center}
+  At the centre\\of the each 
+\end{center}
+
+\section{2.16 Quotations}
+
+\enquote{Please press the \enquote{x} key.}\\
+The \enquote*{x} key is here.
+
+\section{2.16.1 Formal Quotes}
+
+\textquote[A.-Einstein]{Why is it nobody understands me and everybody likes me?}\\
+
+As Einstein once said 
+\begin{displayquote}[%
+  Albert Einstein]
+  Whoever undertake to set himself up as a judge
+  of Truth and knowledge is shipwrecked by the laugher of the gods.  
+\end{displayquote}
+
+
+\blockcquote[Me]{A short quote}
+
+\blockquote[Also Me]{A very long 
+quote that spans over multiple
+lines and should be typeset in 
+display quote style
+according to my publisher.}
+
+\section{2.16.2 Foreign Quotes}
+skipped
+
+\section{2.16.3 Long Quotations and Poetry}
+
+I wanted to quote my favorite speech:
+\begin{quotation}
+  This is a very
+  long speech.
+
+  It spans over multiple paragraphs.
+\end{quotation}
+
+I know only one English poem by heart. It is about Humpty Dumpty.
+\begin{verse}
+  Humpty Dumpty sat on a wall:\\
+  Humpty Dumpty had a great fall.\\
+  All the King's horses and all the Kings men\\
+  Couldn't put Humpty together again. 
+\end{verse}
+
+\section{2.17 Code Listings}
+
+\section{2.17.1 Verbatim}
+
+Use \verb|\LaTeX{}| to print \LaTeX.
+
+We normally use \verb+|+ but 
+when it's not available we
+use \verb|+| to delimit the 
+argument of the \verb|\verb|
+commnad.
+
+\verb*|\TeX user| will produce \TeX user.
+
+To get proper spacing use \verb*|\TeX{} user.|
+
+Several spaces are treated by \LaTeX{} as one space,
+so \verb*|a    b| willl produce a     b.
+
+\begin{verbatim}
+  \documentclass{article}
+  
+  \begin{document}
+  Small is beautiful.
+  \end{document}
+\end{verbatim}
 
 \end{document}
 

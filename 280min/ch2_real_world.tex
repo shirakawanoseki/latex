@@ -10,6 +10,7 @@
 \usepackage{fontspec}
 \usepackage{csquotes}
 \usepackage{verbatim}
+\usepackage{listings}
 
 \setdefaultlanguage{english}
 \setotherlanguage{german}
@@ -284,6 +285,46 @@ so \verb*|a    b| willl produce a     b.
   Small is beautiful.
   \end{document}
 \end{verbatim}
+
+\verbatiminput{~/repository/lshort/src/examples/hello.c}
+
+\section{2.17.2 The listings Package}
+
+\lstinline|\LaTeX{}|
+
+\begin{lstlisting}
+Here is some \LaTeX{} code.
+\end{lstlisting}
+
+\lstinputlisting{~/repository/lshort/src/examples/hello.c}
+
+\lstinputlisting[language=C]{~/repository/lshort/src/examples/hello.c}
+
+\lstinputlisting[
+  language=SQL,
+  basicstyle=\ttfamily,
+  %commentstyle=\color{gray},
+  keywordstyle=\itshape,
+]{~/repository/lshort/src/examples/employee.sql}
+
+\lstset{
+  language=C,
+  numbers=left,
+  breaklines,
+  basicstyle=\ttfamily,
+  %commentstyle=\color{gray},
+  prebreak=\textrightarrow,
+}
+
+\lstinputlisting{~/repository/lshort/src/examples/hello.c}
+
+The satement
+\lstinline|int x = 1;|
+assigns 1 to variable \lstinline|x|.
+
+\lstinputlisting[language={[LaTeX]TeX}]{~/repository/lshort/src/examples/hello.tex}
+
+\lstinputlisting[language=C, numbers=left]{~/repository/lshort/src/examples/hello.c}
 
 \end{document}
 

@@ -11,6 +11,9 @@
 \usepackage{csquotes}
 \usepackage{verbatim}
 \usepackage{listings}
+\usepackage{minted}
+\usepackage{booktabs}
+
 
 \setdefaultlanguage{english}
 \setotherlanguage{german}
@@ -325,6 +328,144 @@ assigns 1 to variable \lstinline|x|.
 \lstinputlisting[language={[LaTeX]TeX}]{~/repository/lshort/src/examples/hello.tex}
 
 \lstinputlisting[language=C, numbers=left]{~/repository/lshort/src/examples/hello.c}
+
+\lstinputlisting[
+  language=C,
+  numbers=left,
+  stepnumber=2,
+  numberblanklines=false,
+  firstnumber=4,
+  numberstyle=\tiny,
+]{~/repository/lshort/src/examples/hello.c}
+
+The \lstinline|main|
+function body
+consists of:
+\lstinputlisting
+[language=C,
+firstline=5,
+lastline=6,]
+{~/repository/lshort/src/examples/hello.c}
+
+\lstinputlisting
+[language=python,
+numbers=left,
+breaklines,]
+{~/repository/lshort/src/examples/factorial.py}
+
+\lstinputlisting[
+  language=python,
+  numbers=left,
+  breaklines,
+  breakindent=1cm,
+  prebreak=\textrightarrow,
+  postbreak=\textleftarrow,
+]
+{~/repository/lshort/src/examples/factorial.py}
+
+\begin{lstlisting}[
+  texcl,
+  language=haskell,
+]
+-- I can use \LaTeX{} here.
+-- The cost is in  \texteuro{}
+cost x = show (
+  folder (+) 0 x
+) ++ " eur"
+\end{lstlisting}
+
+\begin{lstlisting}[
+  texcl,
+  numbers=left,
+  language=haskell,
+]
+const x = show(
+  folder (+) 0 x
+) ++ " eur" -- \label{concat}
+\end{lstlisting}
+The \lstinline|++| in Haskell as seen in line~\ref{concat} 
+means string  concatenation.
+
+\begin{lstlisting}[
+  escapeinside={(*}{*)},
+  numbers=left,
+  language=haskell,
+]
+const x = show ( (*\label{show}*)
+  folder (+) 0 x
+) ++ " eur" -- (*(\texteuro)*)
+\end{lstlisting}
+The \lstinline|show| in Haskell as seen in line~\ref{show}
+converts its argument to a string.
+
+\mintinline{latex}|\LaTeX{}|
+
+\begin{minted}{python}
+x = 0
+for i in range(10):
+  x += 2**i
+print(f"Result: {x}")
+\end{minted}
+
+\inputminted{rust}{/home/detomasomodena/repository/lshort/src/examples/age.rs}
+
+\inputminted[linenos,]{css}{/home/detomasomodena/repository/lshort/src/examples/review.css}
+
+\inputminted[
+  linenos,
+  firstnumber=5,
+  stepnumber=3,
+  highlightlines={6, 10-12}
+  ]{coq}{/home/detomasomodena/repository/lshort/src/examples/em.v}
+
+\inputminted[
+  linenos,
+  breaklines,
+  ]{haskell}{/home/detomasomodena/repository/lshort/src/examples/quicksort.hs}
+
+
+\begin{minted}[
+linenos,
+texcomments,
+escapeinside=||,
+]{html}
+<!DOCSTYLE html>
+<html>
+  <head> |\label{head}|
+    <title>On |\LaTeX{}|</title>
+  </head>
+  <body>
+    <div class="review">
+      <!-- \LaTeX{} review -->
+      <p>It's awsome!</p>
+    </div>
+  </body>
+</html>
+\end{minted}
+The \mintinline{html}{<head>}
+element in line-\ref{head}
+contains page metadata.
+
+\inputminted[style=bw,]{bash}{/home/detomasomodena/repository/lshort/src/examples/echo.sh}
+
+\inputminted[style=sas,]{bash}{/home/detomasomodena/repository/lshort/src/examples/echo.sh}
+
+\inputminted[style=xcode,]{bash}{/home/detomasomodena/repository/lshort/src/examples/echo.sh}
+
+\setminted{
+  linenos,
+  breaklines,
+  style=xcode,
+}
+
+\inputminted{c++}{/home/detomasomodena/repository/lshort/src/examples/goodbye.cpp}
+
+\section{2.18 Tables}
+
+\begin{tabular}{lcr}
+left & centre & right \\
+1    & 2      & 3     \\  
+\end{tabular}
 
 \end{document}
 

@@ -467,5 +467,51 @@ left & centre & right \\
 1    & 2      & 3     \\  
 \end{tabular}
 
+\begin{tabular}{lp{3cm}}
+  left & Very long paragraph that gets broken into multiple lines.\\
+  1 & Another one, but shorter. \\
+\end{tabular}
+
+text
+\begin{tabular}{ll} 1 & 2 \\ 3 & 4 \\ \end{tabular}
+text
+\begin{tabular}[t]{ll} 1 & 2 \\ 3 & 4 \\ \end{tabular}
+text
+\begin{tabular}[b]{ll} 1 & 2 \\ 3 & 4 \\ \end{tabular}
+text
+
+\begin{tabular}{lcl}
+  \toprule
+  Alignment & Letter & Niceness \\
+  \midrule
+  Left & l & Very nice \\
+  Centre & c & Very nice \\
+  Right & r & Very nice \\
+  \bottomrule
+\end{tabular}
+
+
+\begin{tabular}{lll}
+  \toprule[0.1cm]
+  \toprule
+  Person & Face & Table \\
+  \midrule
+  \midrule
+  Me  & :( & Not nice \\
+  You & :[ & Awful \\
+  You reader & :< & Terrible \\
+  \bottomrule
+  \bottomrule[0.1cm]
+\end{tabular}
+
+\begin{tabular}{
+  @{a} c @{\hspace{1cm}} c @{|} c @{ b}
+}
+ 1 & 2 & 3 \\
+ 4 & 5 & 6 \\
+ 7 & 8 & 9 \\
+\end{tabular}
+
+
 \end{document}
 

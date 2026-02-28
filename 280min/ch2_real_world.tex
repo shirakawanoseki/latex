@@ -15,6 +15,8 @@
 \usepackage{booktabs}
 \usepackage{multirow}
 \usepackage{longtable}
+\usepackage{array}
+\usepackage{graphicx}
 
 
 \setdefaultlanguage{english}
@@ -606,6 +608,117 @@ text\\[1cm]
 \end{longtable}
 
 \section{2.18.3 Advanced Tables and Non-Tables}
+
+\begin{longtable}{cl}
+  \toprule
+  \multicolumn{2}{c}{V.~Important Table} \\
+  Number & Word \\
+  \midrule \endfirsthead
+
+  \toprule
+  \multicolumn{2}{c}{VIT (continued)} \\
+  Number & Word \\
+  \midrule \endhead
+
+  \midrule
+  \multicolumn{2}{c}{Not the end} \\
+  \bottomrule \endfoot
+
+  \midrule
+  \multicolumn{2}{c}{The end of VIT} \\
+  \bottomrule \endlastfoot
+
+  0 & Zero \\
+  1 & One \\
+  2 & Two \\
+  3 & Three \\
+  4 & Four \\
+  5 & Five \\
+  6 & Six \\
+  7 & Seven \\
+  8 & Eight \\
+  9 & Nine \\
+  10 & Ten \\
+  
+\end{longtable}
+
+\begin{tabular}{lp{1cm}}
+1 & 2\newline x \\[1cm]
+3 & 4 \\
+\end{tabular}
+\begin{tabular}{p{1cm}l}
+  2\newline x & 1 \\[1cm]
+  4 & 3 \\
+\end{tabular}\\[1cm]
+
+\begin{tabular}{
+  lp{1.4cm}m{1.4cm}b{1.4cm}
+}
+  Cell &
+  Top matches cell. &
+  Centre matches cell. &
+  Bottom matches cell. \\
+\end{tabular}\\[1cm]
+
+\begin{tabular}{
+  l
+  >{\begin{em}}l<{\end{em}}
+}
+  text & emphasised text \\
+  text & emphasised text \\
+  text & emphasised text \\
+\end{tabular}
+
+\newcolumntype{e}{
+  >{\begin{em}\begin{flushleft}}
+  p{2.5cm}
+  <{\end{flushleft}\end{em}}
+}
+  \begin{tabular}{ee}
+    This cell will 
+    be flushed left 
+    and emphasised. &
+    This  cell will
+    be  flushed left
+    and emphasised.
+    \tabularnewline
+
+    This cell will
+    be flushed left
+    and emphasised. &
+    This cell will 
+    be flushed left
+    and emphasised.
+    \tabularnewline
+    
+  \end{tabular}\\[1cm]
+
+\begin{tabular}{c|c|c}
+  0 & X & 0 \\
+  \hline
+  X & X & 0 \\
+  \hline
+  X & 0 & X \\
+\end{tabular}\\[1cm]
+
+\begin{tabular}{|cccc|}
+  \cline{4-4}
+  a & a & \multicolumn{1}{c|}{a} & b \\
+  \cline{2-3}
+  a &  \multicolumn{1}{|c}{b} & b & b \\
+  \cline{2-2}
+  a & a & \multicolumn{1}{|c}{b} & b \\
+  \cline{1-2}  
+\end{tabular}
+
+\section{2.19 Including Graphics and Images}
+
+Here is an image:
+\includegraphics{images/cat.jpg}\\[1cm]
+
+\includegraphics[width=2cm]{images/cat.jpg}
+\includegraphics[height=1cm]{images/cat.jpg}
+\includegraphics[width=2cm, height=1cm]{images/cat.jpg}
 
 
 \end{document}

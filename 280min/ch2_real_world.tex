@@ -13,6 +13,8 @@
 \usepackage{listings}
 \usepackage{minted}
 \usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{longtable}
 
 
 \setdefaultlanguage{english}
@@ -462,15 +464,17 @@ contains page metadata.
 
 \section{2.18 Tables}
 
+\section{2.18.1 Basic Tables}
+
 \begin{tabular}{lcr}
 left & centre & right \\
 1    & 2      & 3     \\  
-\end{tabular}
+\end{tabular}\\[1cm]
 
 \begin{tabular}{lp{3cm}}
   left & Very long paragraph that gets broken into multiple lines.\\
   1 & Another one, but shorter. \\
-\end{tabular}
+\end{tabular}\\[1cm]
 
 text
 \begin{tabular}{ll} 1 & 2 \\ 3 & 4 \\ \end{tabular}
@@ -478,7 +482,7 @@ text
 \begin{tabular}[t]{ll} 1 & 2 \\ 3 & 4 \\ \end{tabular}
 text
 \begin{tabular}[b]{ll} 1 & 2 \\ 3 & 4 \\ \end{tabular}
-text
+text\\[1cm]
 
 \begin{tabular}{lcl}
   \toprule
@@ -488,8 +492,7 @@ text
   Centre & c & Very nice \\
   Right & r & Very nice \\
   \bottomrule
-\end{tabular}
-
+\end{tabular}\\[1cm]
 
 \begin{tabular}{lll}
   \toprule[0.1cm]
@@ -502,7 +505,7 @@ text
   You reader & :< & Terrible \\
   \bottomrule
   \bottomrule[0.1cm]
-\end{tabular}
+\end{tabular}\\[1cm]
 
 \begin{tabular}{
   @{a} c @{\hspace{1cm}} c @{|} c @{ b}
@@ -510,7 +513,99 @@ text
  1 & 2 & 3 \\
  4 & 5 & 6 \\
  7 & 8 & 9 \\
-\end{tabular}
+\end{tabular}\\[1cm]
+
+\begin{tabular}{@{}lll@{}}
+  \toprule
+  Person & Face & Table \\
+  \midrule
+  Me & :) & Nice \\
+  You & :] & Sleak \\
+  Your reader & :> & Informative \\  
+\end{tabular}\\[1cm]
+
+\begin{tabular}{@{}lll@{}}
+  \toprule
+  Person & Face & Table \\
+  \midrule
+  Me & :) & Nice \\
+  You & :] & Sleak \\
+  Your reader & \multicolumn{2}{c}{Not available} \\  
+\end{tabular}\\[1cm]
+
+\begin{tabular}{@{}lll@{}}
+  \toprule
+  & \multicolumn{2}{c}{Reaction} \\
+  \cmidrule(l){2-3}
+  Person & Face & Exclamation \\
+  \midrule
+  Me & :) & Nice \\
+  You & :] & Sleak \\
+  Your reader & \multicolumn{2}{c}{Not available} \\  
+\end{tabular}\\[1cm]
+
+\begin{tabular}{@{}lll@{}}
+  \toprule
+  & \multicolumn{2}{c}{Reaction} \\
+  \cmidrule(l){2-3}
+  Person & Face & Exclamation \\
+  \midrule
+  \multirow[t]{2}{*}{VIPs} & :) & Nice \\
+              & :] & Sleek \\
+  Others      & \multicolumn{2}{c}{Not available} \\
+  \bottomrule 
+\end{tabular}\\[1cm]
+
+\section{2.18.2 Long Tables}
+
+\begin{tabular}{@{}cllcl@{}}
+  \toprule
+  Digit & Word & Digit & Word \\
+  \midrule
+  0 & Zero & 5 & Five \\
+  1 & One & 6 & Six \\
+  2 & Two & 7 & Seven \\
+  3 & Three & 8 & Eight \\
+  4 & Four & 9 & Nine \\
+  \bottomrule
+\end{tabular}\\[1cm]
+
+\begin{longtable}{cl}
+  \toprule
+  Number & Word \\
+  \midrule
+  0 & Zero \\
+  1 & One \\
+  2 & Two \\
+  3 & Three \\
+  4 & Four \\
+  5 & Five \\
+  6 & Six \\
+  7 & Seven \\
+  8 & Eight \\
+  9 & Nine \\
+  % ...
+  10 & Ten \\
+  \bottomrule
+\end{longtable}
+
+\begin{longtable}{
+  cp{2cm}
+}
+  \toprule
+  Number & Words \\
+  \midrule
+  0 & Zero \\
+  1 & Multi pragraph 
+      text.
+
+      It makes the table 
+      cell very tall. \\
+  2 & Two \\
+  \bottomrule
+\end{longtable}
+
+\section{2.18.3 Advanced Tables and Non-Tables}
 
 
 \end{document}

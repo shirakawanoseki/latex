@@ -17,7 +17,8 @@
 \usepackage{longtable}
 \usepackage{array}
 \usepackage{graphicx}
-
+\usepackage{longtable}
+\usepackage{syntonly}
 
 \setdefaultlanguage{english}
 \setotherlanguage{german}
@@ -718,8 +719,144 @@ Here is an image:
 
 \includegraphics[width=2cm]{images/cat.jpg}
 \includegraphics[height=1cm]{images/cat.jpg}
-\includegraphics[width=2cm, height=1cm]{images/cat.jpg}
+\includegraphics[width=2cm, height=1cm]{images/cat.jpg}\\[1cm]
 
+\includegraphics[
+  width=2cm,
+  height=2cm,
+]{images/cat.jpg}
+\includegraphics[
+  width=2cm,
+  height=2cm,
+  keepaspectratio,
+]{images/cat.jpg}\\[1cm]
+
+\includegraphics[
+  scale=0.1,
+]{images/cat.jpg}
+\includegraphics[
+  scale=0.3,
+]{images/cat.jpg}
+\includegraphics[
+  scale=-0.15,
+]{images/cat.jpg}\\[1cm]
+
+Text \includegraphics[
+  angle=45,
+]{images/cat.jpg}
+Text \includegraphics[
+  angle=180,
+]{images/cat.jpg} \\
+Text \includegraphics[
+  angle=180,
+  origin=c,
+]{images/cat.jpg}
+Text \includegraphics[
+  angle=180,
+  origin=lt,
+]{images/cat.jpg}\\[1cm]
+
+\includegraphics[
+  clip,
+  viewport=3cm 3cm 8.5cm 5.5cm,
+]{images/cat.jpg}
+
+\includegraphics[
+  width=1.5cm,
+]{/home/detomasomodena/Documents/ebooks/ila5sols.pdf}
+\includegraphics[
+  width=1.5cm,
+  page=2,
+]{/home/detomasomodena/Documents/ebooks/ila5sols.pdf}
+\includegraphics[
+  width=1.5cm,
+  page=11,
+]{/home/detomasomodena/Documents/ebooks/ila5sols.pdf}\\[1cm]
+
+\includegraphics[
+  scale=0.3,
+  draft,
+]{/home/detomasomodena/Documents/ebooks/ila5sols.pdf}\\[1cm]
+
+\section{2.20 Floating Bodies}
+
+Here is some text
+to take up some space.
+
+Below this text is an image.
+
+\begin{center}
+  \includegraphics[
+    scale=0.2,
+  ]{images/cat.jpg}
+\end{center}
+
+ Here is more text.\\[1cm]
+
+
+Here is some text
+to take up some space.
+
+Below this text is an image.
+
+\begin{figure}
+  \centering
+  \includegraphics[
+    scale=0.2,
+  ]{images/cat.jpg}
+\end{figure}
+
+ Here is more text.\\[1cm]
+
+\listoffigures
+
+Here is some text describing 
+the Figure~\ref{figure}.
+
+\begin{figure}
+  \centering
+  \includegraphics[
+    scale=0.2
+  ]{images/cat.jpg}
+  \caption[A figure]{An 
+  interesting figure}%
+  \label{figure}
+\end{figure}
+
+Here is  more text.
+
+\section{2.20.1 Creating your own Float-Types}
+
+\section{2.20.2 The longtable Environment}
+
+\begin{longtable}{@{}cl@{}}
+  \caption{Numbers} \\
+  \toprule
+  Number & Word \\
+  \midrule \endfirsthead
+
+  \caption[short]{(continued)} \\
+  \toprule
+  Number & Word \\
+  \midrule \endhead
+
+  \bottomrule \endfoot
+  \bottomrule \endlastfoot
+
+  0 & Zero \\
+  1 & One \\
+  2 & Two \\
+  3 & Three \\
+  4 & Four \\
+  5 & Five \\
+  6 & Six \\
+  7 & Seven \\
+
+\end{longtable}
+
+\section{2.21 Big Prpjects}
+
+\include{/home/detomasomodena/repository/lshort/src/overview}
 
 \end{document}
 

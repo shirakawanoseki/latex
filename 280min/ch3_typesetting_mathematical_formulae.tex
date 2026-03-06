@@ -6,6 +6,8 @@
     math-style=ISO,
     warnings-off={mathtools-colon, mathtools-overbracket},
 ]{unicode-math}
+\DeclareMathOperator{\argh}{argh}
+\DeclareMathOperator*{\nut}{Nut}
 
 \setdefaultlanguage{english}
 
@@ -89,6 +91,118 @@ it follows that
 \[
 p \land q \iff 
 \lnot (p \implies \lnot q)
+\]
+
+
+\[
+\lnot\forall_{q} P(q) \iff
+\exists_{q}\lnot P(q)
+\]
+
+\(\{1, 2, 3, \ldots, 100\}\)\\[0.5cm]
+
+\( \{ x \in X: \exists_n x^n = 1 \}  \)\\[0.5cm]
+\( \{ X \ni x\colon \exists_n x^n = 1 \}  \)\\[0.5cm]
+
+\RenewDocumentCommand{\setminus}{}{\smallsetminus}
+\[
+  \emptyset
+  \subset X \setminus X 
+  \subseteq X \cap \emptyset
+  \subseteq X
+  \supseteq X \cup X
+\]
+
+\section{3.3.3 Greek Letter}
+
+Let \(\epsilon\) be small 
+number, and let \(\Epsilon\)
+be a large number.
+
+\section{3.3.4 Mathematical Fonts and How to Use Them}
+
+\[
+\forall_{p \in \symbb{P}}
+\exists_{n \in \symbb{N}}
+p < 5 \lor p^2 = 24n +1
+\]
+
+\NewDocumentCommand{\e}{}{\symrm{e}}
+\NewDocumentCommand{\im}{}{\symrm{i}}
+\NewDocumentCommand{\cpi}{}{\symrm{\pi}}
+\[
+\e^{\im\cpi} + 1 = 0
+\]
+
+\( \cos(2\cpi) = \ln(\e) \)
+
+\[
+\argh(x) = \sinh(\max(x,x^2))
+\]
+
+\section{3.3.5 Big Operators}
+
+\(
+\sum_{k=0}^{n} \frac{1}{k^2}
+\)
+
+\[
+\sum_{k=0}^{n} \frac{1}{k^2}
+\]
+
+\[
+c = \max_{x \to X} f(x)
+\]
+
+\[\nut_y = \lim_{x \to y} \argh{x} \]
+
+\[
+\sum^n_{
+  \substack{0<i<n \\
+  j\subseteq i}
+}
+P(i,j) = Q(i,j)
+\]
+
+\[
+\int_a^b \liminf_{a \to x} a^2
+\]
+
+\[\int\int\int\int\]
+vs.
+\[\iiiint\]
+
+\[
+{\sum_{a}}^b
+{\int}_a^b
+{\nut^b}_a
+\]
+
+\[
+{\sum_{loooooong}}^{b}
+\]
+
+\[
+\sideset{^{a}}{^{b}}{\sum}_{loooooong}
+\]
+
+\section{3.3.6 Math Accents}
+
+\(\bar{x}\) \(\hat{x}\)
+\(\grave{x}\) \(\acute{x}\)
+\(\tilde{x}\) \(\ddot{x}\)\\[0.5cm]
+
+\(\hat{ABC}\) vs.\
+\(\widehat{ABC}\)\\[0.5cm]
+
+\(0.123\overline{456789}\)\\[0.5cm]
+
+\[
+\underbrace{
+  \overbrace{(a+b+c)}^6
+  \times
+  \overbrace{(d+e+f)}^7
+}_{\text{meaning of life}}=42
 \]
 
 \end{document}

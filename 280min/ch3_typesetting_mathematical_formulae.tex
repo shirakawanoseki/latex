@@ -251,5 +251,32 @@ x = \left.
     \right\}
 \]
 
+\DeclarePairedDelimiter{\set}{\{}{\}}
+\DeclarePairedDelimiter{\size}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\mean}{\langle}{\rangle}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\group}{(}{)}
+
+\[
+\floor*{
+ \frac
+  {\mean*{\sum_{k=1}^{\infty} k^{-4}}^3}
+  {\frac{\size*{\set{a,b,c}}^8}{\group*{x^4}^3}}
+ }^6
+\]
+
+\DeclarePairedDelimiter{%
+\setAgain}{\{}{\}}
+\( \bigl[ \ddagger \Biggr) \)
+\( \setAgain[\Big]{1,\frac{3}{4}} \)
 \end{document}
+
+\section{3.4 Multiline Equations}
+
+\begin{equation}
+  a = b + c ; d + e + f
+  + g + h + i + j
+  + k + l + m + n + o + p
+\end{equation}
+
 

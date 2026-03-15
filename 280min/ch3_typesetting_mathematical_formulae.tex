@@ -1,4 +1,5 @@
 \documentclass{article}
+\usepackage{IEEEtrantools}
 
 \usepackage{polyglossia}
 \usepackage{mathtools}
@@ -6,8 +7,10 @@
     math-style=ISO,
     warnings-off={mathtools-colon, mathtools-overbracket},
 ]{unicode-math}
+
 \DeclareMathOperator{\argh}{argh}
 \DeclareMathOperator*{\nut}{Nut}
+\usepackage{IEEEtrantools}
 
 \setdefaultlanguage{english}
 
@@ -278,6 +281,184 @@ x = \left.
   + g + h + i + j
   + k + l + m + n + o + p
 \end{equation}
+
+\section{3.4.1 Long Equations}
+
+\begin{multline}
+  a = b + c + d + e 
+  + f + g + h + i \\
+  = j + k + l + m + n
+\end{multline}
+
+\begin{multline}
+  a = b + c + d + e \\ 
+  + f + g + h + i \\
+  = j + k + l + m + n
+\end{multline}
+
+\begin{multline}
+  a = b + c \\
+  \shoveleft{+ d + e + f} \\
+  \shoveright{+ g + h + i} \\
+  = j + k + l + m + n
+\end{multline}
+
+\section{3.4.2 Multiple Unaligned Equations}
+
+\begin{equation}
+  2 + 2 = 4
+\end{equation}
+\begin{equation}
+  2 \times 2 = 4
+\end{equation}
+\begin{equation}
+  2 + 2 \times 2 = 6
+\end{equation}
+
+\begin{gather}
+  2 + 2 = 4
+  2 \times 2 = 4
+  2 + 2 \times 2 = 6
+\end{gather}
+
+\begin{gather}
+  2 + 2 = 4
+    \tag{Esay}\label{easy} \\
+  2 \times 2 = 4 \notag \\
+  2 + 2 \times 2 = 6
+    \label{hard}
+\end{gather}
+Note:-\eqref{easy} is easier 
+than-\eqref{hard}.
+
+\section{3.4.3 Multiple Aligned Equations}
+
+\begin{align}
+  2 + 2 & = 2 \times 2 \\
+  3 + 3 & \neq 3 \times 3
+  2 + 2 \times 2& < 8
+\end{align}
+
+\begin{align}
+  a & \succeq b & c & \leq d \\
+  a & \geq d & d & \prec c
+\end{align}
+
+\begin{align}
+  \sum_{k=0}^n k 
+  &= \sum_{k=0}^{n-1} k + n \\
+  &= \frac{n(n-1)}{2}  + n \\
+  &= \frac{n(n-1)}{2}
+\end{align}
+
+\begin{align}
+  \sum_{k=0}^n k 
+  &= \sum_{k=0}^{n-1} k + n && \text{definition}\\
+  &= \frac{n(n-1)}{2}  + n && \text{introduction}\\
+  &= \frac{n(n-1)}{2} && \text{trivial}
+\end{align}
+
+\begin{align}
+  a + b + c
+  &= d + e + f \nonumber \\
+  & \phantom{=}\ + g + h \nonumber \\
+  & \phantom{=}\ + i \\
+  &= j + k + l
+\end{align}
+
+\section{3.4.4 Equations as Building Blocks}
+
+\[
+\begin{multlined}[t]
+  1 + 2 \\
+  + 3 + 4 
+\end{multlined} =
+\begin{gathered}[c]
+  1 + 2 \\
+  + 3 + 4
+\end{gathered} = 
+\begin{aligned}[b]
+  1 & + 2 \\
+    & + 3 + 4
+\end{aligned}
+\]
+
+\begin{equation}
+  \begin{aligned}
+    2 + 2 \times 2 
+    &= 2 \times 2 + 2 \\
+    &\neq 2 \times (2+2) \\
+  \end{aligned}
+\end{equation}
+
+\begin{align}
+  a + b + c
+    &= \begin{multlined}[t]
+      d + e \\
+      + e + f \\
+      + h
+    \end{multlined} \\
+    &= \begin{aligned}[t]
+      i &+ j \\
+        &- k \\
+        &\div m \\
+        &\times n
+    \end{aligned} \\
+    &= o + p + q
+\end{align}
+
+\section{3.4.5 IEEEequnarry Environment}
+
+\begin{IEEEeqnarray}{rCl}
+  a & = & b + c \\
+  & = & d + e + f + g + h \\
+  & = & i + j + k
+\end{IEEEeqnarray}
+
+\begin{IEEEeqnarray}{rCl}
+  a & = & b + c \\
+  & = & d + e + f
+    + g + h + i + j \\
+  & = & k + l + m + n.
+\end{IEEEeqnarray}
+
+\begin{IEEEeqnarray}{rCl}
+  a & = & b + c \\
+  & = & d + e + f
+    + g + h + i + j 
+    \IEEEeqnarraynumspace \\
+  & = & k + l + m + n.
+\end{IEEEeqnarray}
+
+\begin{IEEEeqnarray}{rCl}
+  \IEEEeqnarraymulticol{3}{l}{
+    a + b + c + d = e + f
+  } \\
+  e + f & = & g + h \\
+  & = & i + j + k + l + m
+\end{IEEEeqnarray}
+
+\begin{IEEEeqnarray*}{rCl}
+  a & = & b + c \\
+  & = & d + e \IEEEyesnumber \\
+  & = & f + g
+\end{IEEEeqnarray*}
+
+\begin{IEEEeqnarray}{rCl}
+  a & = & b + c \\
+  & = & d + e \notag \\
+  & = & f + g \IEEEyessubnumber
+\end{IEEEeqnarray}
+
+\begin{IEEEeqnarray*}{rCl}
+  a & = & b + c + d \\
+  & & + e \quad \text{too narrow!}\\
+  & & \negmedspace{} + e \\
+  & = & f + 2e
+\end{IEEEeqnarray*}
+
+\section{3.5 Units}
+
 
 
 \end{document}
